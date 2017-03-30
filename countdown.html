@@ -24,22 +24,21 @@
         </tr>
       </table>
 
-<div class="freeze-layer" id="freezeLayer" style="display:none; ">
-
-</div>
+      <div class="freeze-layer" id="freezeLayer" style="display:none; "></div>
       <button onclick="validateNumber(prompt('Enter any number'));">Default Prompt</button>
-      <button onclick="">Custom Prompt</button>
-      <div id="dialogCont">
+      <button onclick="CustomPrompt.show('Enter any number', validateNumber);">Custom Prompt</button>
+      <div id="result"></div>
+      <div id="dialogCont" class="dialog">
         <div class="dlg-header">
           <span id="dlg-header">Custom Prompt</span>
         </div>
         <div class="dlg-body">
-          <div class="dlgMessage">Enter your input</div>
+          <div id="dlgMessage">Enter your input</div>
           <input id="dialogInputEl" type="text" class="dlg-input-el"/>
         </div>
         <div class="dlg-footer">
-          <a onclick="">Okay</a>
-          <a onclick="">Cancel</a>
+          <a onclick="CustomPrompt.okay();">Okay</a>
+          <a onclick="CustomPrompt.cancel();">Cancel</a>
         </div>
       </div>
 

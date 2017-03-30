@@ -25,7 +25,21 @@ function countdown() {
   document.getElementById("hours").textContent = h;
   document.getElementById("minutes").textContent = m;
   document.getElementById("seconds").textContent = s;
-console.log("this IS working");
+
   setTimeout(countdown, 1000);
+
+  function validateNumber(number) {
+    var msg = '';
+    if(number != null){
+      if(isNaN(number)){
+        msg = "The input is not a valid number";
+      }else{
+        msg = (number % 2 == 0) ? "Even number": "Odd number";
+      }
+    }else{
+        msg = "You cancelled the action."
+    }
+    document.getElementById('result').textContent = msg;
+  }
 }
   countdown();
