@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Christmas Condom</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
       <table class="countdownContainer">
@@ -23,6 +23,26 @@
           <td>Seconds</td>
         </tr>
       </table>
+
+<div class="freeze-layer" id="freezeLayer" style="display:none; ">
+
+</div>
+      <button onclick="validateNumber(prompt('Enter any number'));">Default Prompt</button>
+      <button onclick="">Custom Prompt</button>
+      <div id="dialogCont">
+        <div class="dlg-header">
+          <span id="dlg-header">Custom Prompt</span>
+        </div>
+        <div class="dlg-body">
+          <div class="dlgMessage">Enter your input</div>
+          <input id="dialogInputEl" type="text" class="dlg-input-el"/>
+        </div>
+        <div class="dlg-footer">
+          <a onclick="">Okay</a>
+          <a onclick="">Cancel</a>
+        </div>
+      </div>
+
       <script src = "countdown.js"></script>
   </body>
 </html>

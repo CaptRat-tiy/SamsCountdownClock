@@ -25,7 +25,7 @@ function countdown() {
   document.getElementById("hours").textContent = h;
   document.getElementById("minutes").textContent = m;
   document.getElementById("seconds").textContent = s;
-
+console.log("this IS working");
   setTimeout(countdown, 1000);
 }
   countdown();
