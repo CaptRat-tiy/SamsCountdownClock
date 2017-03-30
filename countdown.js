@@ -27,6 +27,9 @@ function countdown() {
   document.getElementById("seconds").textContent = s;
 
   setTimeout(countdown, 1000);
+  }
+
+countdown();
 
   function validateNumber(number) {
     var msg = '';
@@ -39,7 +42,38 @@ function countdown() {
     }else{
         msg = "You cancelled the action."
     }
-    document.getElementById('result').textContent = msg;
+    document.getElementById('result').textContent = msg
   }
-}
-  countdown();
+  var CustomPrompt = new function(){
+
+				this.dialogInputEl = document.getElementById('dialogInputEl');
+
+				this.show = function(msg, callback){
+					var dlg = document.getElementById('dialogCont');
+					dlg.style.top = '30%';
+					dlg.style.opacity = 1;
+					var dlgMessage = dlg.querySelector('#dlgMessage');
+					dlgMessage.textContent = msg;
+					dialogInputEl.focus();
+					dialogInputEl.value = '';
+					this.callback = callback;
+					document.getElementById('freezeLayer').style.display = '';
+				};
+
+				this.okay = function () {
+					this.callback(dialogInputEl.value);
+					this.close();
+				}
+
+				this.cancel = function  () {
+					this.callback(null);
+					this.close();
+				}
+
+				this.close = function  () {
+					var dlg = document.getElementById('dialogCont');
+					dlg.style.top = '-30%';
+					dlg.style.opacity = 0;
+					document.getElementById('freezeLayer').style.display = 'none';
+				}
+			}

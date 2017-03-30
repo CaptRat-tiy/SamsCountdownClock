@@ -24,9 +24,9 @@
         </tr>
       </table>
 
-      <div class="freeze-layer" id="freezeLayer" style="display:none; "></div>
-      <button onclick="validateNumber(prompt('Enter any number'));">Default Prompt</button>
-      <button onclick="CustomPrompt.show('Enter any number', validateNumber);">Custom Prompt</button>
+      <div id="freezeLayer" class="freeze-layer" style="display:none; "> </div>
+      <button onclick="validateNumber(prompt('Enter a date in the future'));">Default Prompt </button>
+      <button onclick="CustomPrompt.show('Enter a date in the future ', validateNumber);">Custom Prompt</button>
       <div id="result"></div>
       <div id="dialogCont" class="dialog">
         <div class="dlg-header">
